@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Castelan | Portafolio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <nav class="navbar glassmorphism">
+        <div class="logo">
+            <span class="glitch" data-text="<JC/>">&lt;JC/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button id="theme-toggle" class="glow-btn" aria-label="Cambiar tema">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="avatar-glow">
+                    <!-- Espacio para el avatar de perfil -->
+                    <img src="https://ui-avatars.com/api/?name=Juan+Castelan&background=0ea5e9&color=fff&size=160&bold=true" alt="Avatar de Juan Castelan" class="avatar">
+                </div>
+            </div>
+            <h1 class="typing-text">Hola, soy <br><span class="highlight">Juan Castelan</span></h1>
+            <h2 class="subtitle">Desarrollador Web & Entusiasta Tech</h2>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn primary-btn glow-effect">Ver Proyectos</a>
+                <a href="#contacto" class="btn secondary-btn">Contactar</a>
+            </div>
+        </div>
+        <div class="hero-3d">
+            <!-- Google Model Viewer Integrado -->
+            <model-viewer 
+                src="assets/3d/setup.glb" 
+                alt="Un modelo 3D de un setup de programador" 
+                auto-rotate 
+                camera-controls 
+                interaction-prompt="none"
+                shadow-intensity="1"
+                environment-image="neutral"
+                exposure="1.2">
+            </model-viewer>
+        </div>
+    </header>
+
+    <main>
+        <section id="sobre-mi" class="section">
+            <h2 class="section-title">&lt;Sobre mí /&gt;</h2>
+            <div class="about-container glass-card hover-glow">
+                <p>¡Hola! Soy un desarrollador apasionado por crear experiencias web únicas y funcionales. Me encanta resolver problemas complejos y transformar ideas en código limpio y eficiente. Siempre estoy aprendiendo nuevas tecnologías y mejorando mis habilidades para estar a la vanguardia del desarrollo tecnológico.</p>
+                
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="prompt">juan@portfolio:~$</span> cat info.txt</p>
+                        <p class="output">Ubicación: Universo Digital</p>
+                        <p class="output">Intereses: Programación, Tecnología, Diseño Web</p>
+                        <p><span class="prompt">juan@portfolio:~$</span> <span class="cursor">_</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="section">
+            <h2 class="section-title">&lt;Habilidades /&gt;</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass-card hover-glow">
+                    <i class="fab fa-html5 skill-icon" style="color: #e34f26;"></i>
+                    <h3>HTML5</h3>
+                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-card glass-card hover-glow">
+                    <i class="fab fa-css3-alt skill-icon" style="color: #1572b6;"></i>
+                    <h3>CSS3 / Flexbox / Grid</h3>
+                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-card glass-card hover-glow">
+                    <i class="fab fa-js skill-icon" style="color: #f7df1e;"></i>
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-card glass-card hover-glow">
+                    <i class="fas fa-cubes skill-icon" style="color: #8b5cf6;"></i>
+                    <h3>Modelos 3D / WebGL</h3>
+                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                </div>
+                <div class="skill-card glass-card hover-glow">
+                    <i class="fab fa-python skill-icon" style="color: #3776ab;"></i>
+                    <h3>Python</h3>
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section">
+            <h2 class="section-title">&lt;Proyectos /&gt;</h2>
+            <div class="projects-grid">
+                <!-- Proyecto 1: Animación Rive -->
+                <article class="project-card glass-card hover-glow">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline class="project-video">
+                            <!-- Sustituye esta ruta por la ruta real de tu video -->
+                            <source src="assets/videos/animacion.mp4" type="video/mp4">
+                            Tu navegador no soporta videos.
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Animación Rive</h3>
+                        <p>Implementación de una animación fluida e interactiva para la web utilizando el motor de Rive.</p>
+                        <div class="tags">
+                            <span class="tag">Rive</span>
+                            <span class="tag">Animación</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                        <a href="#" class="btn outline-btn glow-effect">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2: Setup 3D -->
+                <article class="project-card glass-card hover-glow">
+                    <div class="project-media">
+                        <model-viewer 
+                            src="assets/3d/Setup Juan Castelan.glb" 
+                            alt="Modelo 3D de un setup hecho en Blender" 
+                            auto-rotate 
+                            camera-controls 
+                            shadow-intensity="1"
+                            class="project-3d">
+                        </model-viewer>
+                    </div>
+                    <div class="project-info">
+                        <h3>Setup 3D Blender</h3>
+                        <p>Modelado 3D de un entorno de programación (setup) creado y optimizado desde cero en Blender.</p>
+                        <div class="tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">3D</span>
+                            <span class="tag">Model Viewer</span>
+                        </div>
+                        <a href="#" class="btn outline-btn glow-effect">Ver Detalles</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2 class="section-title">&lt;Contacto /&gt;</h2>
+            <div class="contact-container glass-card hover-glow">
+                <form id="contact-form" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Nombre</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Correo Electrónico</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Mensaje</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn glow-effect w-100">
+                        <span>Enviar Mensaje</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div class="social-links">
+                    <a href="#" class="social-icon hover-glow" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon hover-glow" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon hover-glow" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer glassmorphism">
+        <p>&copy; 2026 Juan Castelan. Todos los derechos reservados.</p>
+        <p class="footer-code">Construido con <i class="fas fa-heart" style="color: var(--accent-color);"></i> y <i class="fas fa-coffee"></i></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
