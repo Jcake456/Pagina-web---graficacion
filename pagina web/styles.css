@@ -2,34 +2,34 @@
    Variables y Tema
    ========================================= */
 :root {
-    /* Tema Oscuro (Por defecto) */
-    --bg-color: #0f172a;
-    --bg-secondary: #1e293b;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-color: #0ea5e9; /* Cyan / Neón */
-    --accent-glow: rgba(14, 165, 233, 0.5);
-    --secondary-accent: #8b5cf6; /* Morado Hacker */
+    /* Tema Oscuro (Rhodes Island Theme) */
+    --bg-color: #050505; /* Black */
+    --bg-secondary: #121212; /* Dark Grey */
+    --text-primary: #ffffff; /* White */
+    --text-secondary: #a1a1aa; /* Light Grey */
+    --accent-color: #38bdf8; /* Rhodes Island Cyan */
+    --accent-glow: rgba(56, 189, 248, 0.5);
+    --secondary-accent: #ffffff; /* White Accent */
     
-    --glass-bg: rgba(30, 41, 59, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(15, 15, 15, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.15);
     
-    --font-main: 'Inter', sans-serif;
-    --font-code: 'Fira Code', monospace;
+    --font-main: 'EB Garamond', serif;
+    --font-code: 'Cinzel', serif;
 }
 
 [data-theme="light"] {
-    /* Tema Claro */
-    --bg-color: #f8fafc;
-    --bg-secondary: #e2e8f0;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent-color: #0284c7;
-    --accent-glow: rgba(2, 132, 199, 0.3);
-    --secondary-accent: #7c3aed;
+    /* Tema Claro (Endfield Industries Theme) */
+    --bg-color: #ffffff;
+    --bg-secondary: #f4f4f5;
+    --text-primary: #000000;
+    --text-secondary: #3f3f46;
+    --accent-color: #000000; /* Black for high contrast */
+    --accent-glow: rgba(0, 0, 0, 0.2);
+    --secondary-accent: #fcee0a; /* Endfield Yellow */
     
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.15);
 }
 
 /* =========================================
@@ -429,21 +429,30 @@ model-viewer {
    ========================================= */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
 }
 
 .project-card {
     overflow: hidden;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+#project-rive {
+    min-height: 400px;
+}
+
+#project-blender {
+    min-height: 600px;
 }
 
 .project-media {
-    height: 250px;
+    width: 50%;
+    height: auto;
     background: var(--bg-secondary);
-    border-bottom: 1px solid var(--glass-border);
+    border-right: 1px solid var(--glass-border);
     position: relative;
     overflow: hidden;
 }
@@ -462,9 +471,11 @@ model-viewer {
 }
 
 .project-info {
-    padding: 2rem;
+    width: 50%;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-grow: 1;
 }
 
@@ -657,6 +668,22 @@ model-viewer {
         height: 450px;
         margin-top: 2rem;
     }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-media {
+        width: 100%;
+        height: 300px;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .project-info {
+        width: 100%;
+        padding: 2rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -710,4 +737,308 @@ model-viewer {
     .contact-container {
         padding: 1.5rem;
     }
+}
+
+/* =========================================
+   Portada Section
+   ========================================= */
+.portada-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 100px 5% 50px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.portada-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.portada-section::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: var(--secondary-accent);
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.portada-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
+    gap: 2rem;
+    padding: 3rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+}
+
+.portada-left, .portada-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.portada-left {
+    align-items: center;
+    text-align: center;
+    padding-right: 2rem;
+}
+
+.portada-right {
+    padding-left: 2rem;
+    border-left: 1px solid var(--glass-border);
+}
+
+@media (max-width: 768px) {
+    .portada-left {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        padding-bottom: 2rem;
+    }
+    .portada-right {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 2rem;
+    }
+}
+
+.portada-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+.portada-name {
+    font-family: var(--font-code);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.portada-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.portada-bio {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.portada-school {
+    color: var(--text-primary);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    position: relative;
+}
+
+.portada-school::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+.portada-details {
+    width: 100%;
+}
+
+.portada-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.2s, background 0.2s;
+}
+
+[data-theme="light"] .portada-row {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.portada-row:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .portada-row:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.portada-row:nth-child(even) {
+    border-left-color: var(--secondary-accent);
+}
+
+.portada-label {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.portada-value {
+    color: var(--text-secondary);
+    text-align: right;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* =========================================
+   Zoom Controls
+   ========================================= */
+.zoom-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+}
+
+.zoom-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(14, 165, 233, 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.2s, background 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.zoom-btn:hover {
+    transform: scale(1.15);
+    background: rgba(139, 92, 246, 0.9);
+}
+
+/* =========================================
+   Endfield Light Theme Overrides
+   ========================================= */
+[data-theme="light"] .section-title {
+    color: #000;
+    text-shadow: 3px 3px 0px var(--secondary-accent);
+}
+
+[data-theme="light"] .primary-btn {
+    background-color: var(--secondary-accent);
+    color: #000;
+    font-weight: 800;
+    border: 2px solid #000;
+}
+
+[data-theme="light"] .primary-btn:hover {
+    box-shadow: 0 0 15px var(--secondary-accent);
+}
+
+[data-theme="light"] .portada-school::after {
+    background: linear-gradient(90deg, transparent, var(--secondary-accent), transparent);
+}
+
+[data-theme="light"] .portada-avatar {
+    border-color: var(--secondary-accent);
+    box-shadow: 0 0 25px var(--secondary-accent);
+}
+
+[data-theme="light"] .zoom-btn {
+    background: var(--secondary-accent);
+    color: #000;
+}
+
+[data-theme="light"] .zoom-btn:hover {
+    background: #000;
+    color: var(--secondary-accent);
+}
+
+/* =========================================
+   Rhodes Island Dark Theme Overrides
+   ========================================= */
+[data-theme="dark"] .section-title {
+    color: var(--text-primary);
+    text-shadow: 3px 3px 0px var(--accent-color);
+}
+
+[data-theme="dark"] .primary-btn {
+    background-color: var(--accent-color);
+    color: #000;
+    font-weight: 800;
+    border: 2px solid var(--text-primary);
+}
+
+[data-theme="dark"] .primary-btn:hover {
+    box-shadow: 0 0 15px var(--accent-glow);
+    background-color: var(--text-primary);
+    color: #000;
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .portada-school::after {
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+[data-theme="dark"] .portada-avatar {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+[data-theme="dark"] .zoom-btn {
+    background: var(--accent-color);
+    color: #000;
+}
+
+[data-theme="dark"] .zoom-btn:hover {
+    background: var(--text-primary);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent-glow);
 }
