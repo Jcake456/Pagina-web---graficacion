@@ -2,6 +2,8 @@
 
 An interactive 3D WebGL developer portfolio built as an academic project for the **Instituto Tecnológico de Mérida** 🏫. It features a fully custom 3D programmer setup integrated into a responsive dark-mode web environment 💻.
 
+🔗 **Live Demo:** [https://jcake456.github.io/Pagina-web---graficacion/](https://jcake456.github.io/Pagina-web---graficacion/)
+
 ## 🌟 Features
 - **🏗️ Semantic HTML5 & Modern CSS:** Structured with clean grid/flexbox layout and adaptive design for mobile devices.
 - **🎮 3D Interactive Scene (Three.js):** Custom-built Blender setup featuring automated rotation, levitation, and mouse parallax effects.
